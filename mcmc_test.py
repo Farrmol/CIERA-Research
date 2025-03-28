@@ -4,7 +4,7 @@ import orbitize
 from orbitize import driver
 import multiprocessing as mp
 
-filename = "{}/simulated_ra_dec_data.csv".format(orbitize.DATADIR)
+filename = "simulated_ra_dec_data.csv"
 
 # system parameters
 num_secondary_bodies = 1
