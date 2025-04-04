@@ -33,7 +33,7 @@ my_driver = driver.Driver(
         "num_threads": num_threads,
     }, system_kwargs={"restrict_angle_ranges": True},
 )
-
+print(my_driver.system.data_table)
 
 if __name__ == '__main__':
 
