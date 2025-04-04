@@ -49,7 +49,7 @@ if __name__ == '__main__':
     object_to_plot=1,  # Plot orbits for the first (and only, in this case) companion
     num_orbits_to_plot=100,  # Will plot 100 randomly selected orbits of this companion
     start_mjd=epochs[0],  # Minimum MJD for colorbar (here we choose first data epoch)
-    sep_pa_end_year=1870.0
+    sep_pa_end_year=2001
     )
     orbit_plot_fig.savefig(
     "my_orbit_plot.png"
