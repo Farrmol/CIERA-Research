@@ -31,7 +31,7 @@ my_driver = driver.Driver(
         "num_temps": num_temps,
         "num_walkers": num_walkers,
         "num_threads": num_threads,
-    }, system_kwargs={"restrict_angle_ranges": True},
+    }, system_kwargs={"restrict_angle_ranges": True, "tau_ref_epoch":0},
 )
 print(my_driver.system.data_table)
 
