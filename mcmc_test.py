@@ -8,10 +8,10 @@ filename = "simulated_ra_dec_data.csv"
 
 # system parameters
 num_secondary_bodies = 1
-total_mass = 3.375  # [Msol]
-plx = 30  # [mas]
-mass_err = 0.05  # [Msol]
-plx_err = 0.12  # [mas]
+total_mass = 4.632800608828007 # [Msol]
+plx = 30 # [mas]
+mass_err = 0  # [Msol]
+plx_err = 0  # [mas]
 
 # MCMC parameters
 num_temps = 20
@@ -31,7 +31,7 @@ my_driver = driver.Driver(
         "num_temps": num_temps,
         "num_walkers": num_walkers,
         "num_threads": num_threads,
-    }, system_kwargs={"restrict_angle_ranges": True, "tau_ref_epoch":0},
+    }, system_kwargs={"tau_ref_epoch":0},
 )
 print(my_driver.system.data_table)
 
