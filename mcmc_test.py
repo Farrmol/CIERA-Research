@@ -43,11 +43,17 @@ if __name__ == '__main__':
     burn_steps = 10000  # steps to burn in per walker
     thin = 10  # only save every 2nd step
 
-    #my_driver.sampler.run_sampler(total_orbits, burn_steps=burn_steps, thin=thin)
+    my_driver.sampler.run_sampler(total_orbits, burn_steps=burn_steps, thin=thin)
 
     epochs = my_driver.system.data_table["epoch"]
 
-    hdf5_filename = "../my_posterior.hdf5"
+# To avoid weird behaviours, delete saved file if it already exists from a previous run of this notebook
+    hdf5_filename = "my_posterior.hdf5"
+    if os.path.isfile(hdf5_filename):
+        os.remove(hdf5_filename)
+
+    my_driver.sampler.results.save_results(hdf5_filename)
+
     loaded_results = results.Results()  # Create blank results object for loading
     loaded_results.load_results(hdf5_filename)
     
@@ -66,17 +72,7 @@ if __name__ == '__main__':
     param_list=["sma1", "ecc1"], n_walkers=5
     )
 
-    
 
-
-    
-   
-
-# To avoid weird behaviours, delete saved file if it already exists from a previous run of this notebook
-    if os.path.isfile(hdf5_filename):
-        os.remove(hdf5_filename)
-
-    my_driver.sampler.results.save_results(hdf5_filename)
     
     
   
